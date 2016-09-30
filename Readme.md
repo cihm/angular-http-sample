@@ -16,3 +16,4 @@ Build deploy and min(js,css,html) version
 1. modify Gruntfile.js
 2. wiredep =>ignorePath: /^(\.\.\/)*\.\./
 3. grunt build
+4.
