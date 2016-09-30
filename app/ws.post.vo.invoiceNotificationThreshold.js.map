@@ -1,0 +1,1 @@
+{"version":3,"file":"ws.post.vo.invoiceNotificationThreshold.js","sourceRoot":"","sources":["ws.post.vo.invoiceNotificationThreshold.ts"],"names":[],"mappings":";AACA;IAKE,8CAAY,IAAY,EAAE,eAAwB,EAAE,UAAkB;QACpE,IAAI,CAAC,IAAI,GAAC,IAAI,CAAC;QACf,IAAI,CAAC,eAAe,GAAC,eAAe,CAAC;QACrC,IAAI,CAAC,UAAU,GAAC,UAAU,CAAC;IAC7B,CAAC;IACH,2CAAC;AAAD,CAAC,AAVD,IAUC;AAVY,4CAAoC,uCAUhD,CAAA"}
