@@ -7,19 +7,17 @@ import 'rxjs/add/operator/toPromise';
 import { InvoiceNotificationThresholdWsVo } from './ws.vo.invoiceNotificationThreshold';
 import { InvoiceNotificationThresholdWsPostVo } from './ws.post.vo.invoiceNotificationThreshold'
 
+import myGlobals = require('./global.path'); //<==== this one
+
 @Injectable()
 export class HttpRequest {
     constructor(private http: Http) { }
 
     private headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
 
-    private wsUrl: string = 'http://210.80.86.148:8080/eInvoiceNumberService/backend/invoiceNotificationThreshold?srcProject=abStoreWeekend&type=triplicateUniformInvoice';
-
-    private postUrl: string = 'http://210.80.86.148:8080/eInvoiceNumberService/backend/invoiceNotificationThreshold';
-
     getDataViaPromise(term: string, aa: number): Promise<InvoiceNotificationThresholdWsVo[]> {
 
-        return this.http.get(this.wsUrl)
+        return this.http.get(myGlobals.wsUrl)
             .toPromise()
             .then((response) => response.json() as InvoiceNotificationThresholdWsVo[])
             //.then(this.extractData )
@@ -30,7 +28,7 @@ export class HttpRequest {
 
 
         return this.http
-            .post(this.postUrl, this.httpPostNVP(invoiceNotificationThresholdWsPostVo).toString(), { headers: this.headers })
+            .post(myGlobals.postUrl, this.httpPostNVP(invoiceNotificationThresholdWsPostVo).toString(), { headers: this.headers })
             .toPromise()
             .then((response) => response.json() as any[])
             //.then(this.extractData )
