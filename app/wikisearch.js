@@ -12,15 +12,17 @@ var http_1 = require('@angular/http');
 var core_1 = require('@angular/core');
 require('rxjs/add/operator/map');
 require('rxjs/add/operator/toPromise');
+var myGlobals = require('./global.path'); //<==== this one
 var HttpRequest = (function () {
     function HttpRequest(http) {
         this.http = http;
         this.headers = new http_1.Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
-        this.wsUrl = 'http://210.80.86.148:8080/eInvoiceNumberService/backend/invoiceNotificationThreshold?srcProject=abStoreWeekend&type=triplicateUniformInvoice';
-        this.postUrl = 'http://210.80.86.148:8080/eInvoiceNumberService/backend/invoiceNotificationThreshold';
+        this.wsUrl = myGlobals.wsUrl;
+        this.postUrl = myGlobals.postUrl;
     }
     HttpRequest.prototype.getDataViaPromise = function (term, aa) {
-        return this.http.get(this.wsUrl)
+        console.log(this.wsUrl);
+        return this.http.get(myGlobals.wsUrl)
             .toPromise()
             .then(function (response) { return response.json(); })
             .catch(this.handleError);
@@ -65,6 +67,7 @@ var HttpRequest = (function () {
             'action=query&list=search&format=xmlfm&srsearch=' + term);
     };
     HttpRequest = __decorate([
+        //<==== this one
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
     ], HttpRequest);

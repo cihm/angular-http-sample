@@ -15,8 +15,11 @@ export class HttpRequest {
 
     private headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
 
-    getDataViaPromise(term: string, aa: number): Promise<InvoiceNotificationThresholdWsVo[]> {
+    private wsUrl: string=myGlobals.wsUrl; 
+    private postUrl: string=myGlobals.postUrl; 
 
+    getDataViaPromise(term: string, aa: number): Promise<InvoiceNotificationThresholdWsVo[]> {
+     console.log(this.wsUrl);   
         return this.http.get(myGlobals.wsUrl)
             .toPromise()
             .then((response) => response.json() as InvoiceNotificationThresholdWsVo[])
@@ -28,7 +31,7 @@ export class HttpRequest {
 
 
         return this.http
-            .post(myGlobals.postUrl, this.httpPostNVP(invoiceNotificationThresholdWsPostVo).toString(), { headers: this.headers })
+            .post(this.postUrl, this.httpPostNVP(invoiceNotificationThresholdWsPostVo).toString(), { headers: this.headers })
             .toPromise()
             .then((response) => response.json() as any[])
             //.then(this.extractData )
