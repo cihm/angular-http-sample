@@ -1,4 +1,4 @@
 node_modules
 typings
 bower_components
-app/global.path.*
+app/global.path.**
