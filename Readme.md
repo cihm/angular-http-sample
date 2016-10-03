@@ -11,9 +11,8 @@ Init lib
 Deploy on local
 1. npm start
 
+//i have ignore global.path.ts
+//cotact me directly
+
 //not finish
 Build deploy and min(js,css,html) version  
-1. modify Gruntfile.js  
-2. wiredep =>ignorePath: /^(\.\.\/)*\.\./  
-3. grunt build  
-4.  
