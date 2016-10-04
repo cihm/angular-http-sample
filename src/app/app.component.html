@@ -1,0 +1,19 @@
+<div *ngIf="invoiceNotificationThresholdWsVo">
+  <h1>angular2 http get sample</h1>
+  <button (click)="callApi()">callApi</button>
+  <input [(ngModel)]="invoiceNotificationThresholdWsVo.hintThreshold">
+  <h1> {{invoiceNotificationThresholdWsVo.created}}</h1>
+</div>
+<hr>
+<div *ngIf="invoiceNotificationThresholdWsVo">
+  <h1>angular2 http post sample</h1>
+  <input [(ngModel)]="invoiceNotificationThresholdWsPostVo.type" placeholder="type">
+  <input [(ngModel)]="invoiceNotificationThresholdWsPostVo.thresholdAmount" placeholder="thresholdAmount">
+  <input [(ngModel)]="invoiceNotificationThresholdWsPostVo.srcProject" placeholder="srcProject">
+  <button (click)="callPostApi()">callPostApi</button>
+  <hr>
+  <div *ngIf="invoiceNotificationThresholdWsPostRespVo && invoiceNotificationThresholdWsPostRespVo.returnStatus && invoiceNotificationThresholdWsPostRespVo.returnStatus!=='success' ">
+
+    <h1> error msg {{invoiceNotificationThresholdWsPostRespVo.returnStatus}}</h1>
+  </div>
+</div>
